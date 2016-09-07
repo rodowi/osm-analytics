@@ -139,10 +139,10 @@ function getArrayBuffer(url, callback) {
     // now res.body is an arraybuffer or a blob
     if (!err && res.status >= 200 && res.status < 300) {
       callback(null, res.body)
-    } else if (res.status === 404) {
+    } else if (res && res.status === 404) {
       callback(null, null)
     } else {
-      callback(error || new Error(res.status))
+      callback(err || new Error(res.status))
     }
   });
 };
