@@ -126,6 +126,7 @@ function loadTile(tile, filter, time, callback) {
 function getArrayBuffer(url, callback) {
   // todo: global?
   request.parse['application/x-protobuf'] = obj => obj
+  request.parse['application/octet-stream'] = obj => obj
   request.get(url)
   .on('request', function () {
     // todo: needed?
