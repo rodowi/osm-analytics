@@ -86,8 +86,10 @@ function getAndCacheTile(tile, filter, time, callback) {
       centr.properties = feature.properties
       if (feature.geometry.type === 'Point') {
         centr.properties._length = 0.0
-      } else {
+      } else if (feature.geometry.type === 'LineString') {
         centr.properties._length = centr.properties._lineDistance || lineDistance(feature, 'kilometers')
+      } else {
+        // todo: multilinestrings ???, (multi)polygons?
       }
       return centr
     })
