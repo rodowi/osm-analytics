@@ -80,8 +80,9 @@ class Map extends Component {
       alert('This browser does not support WebGL which is required to run this application. Please check that you are using a supported browser and that WebGL is enabled.')
     }
     glLayer = L.mapboxGL({
+      accessToken: 'pk.eyJ1Ijoicm9kb3dpIiwiYSI6ImdZdDkyQU0ifQ.bPu86kwHgaenPhYp84g1yg',
       updateInterval: 0,
-      style: glStyles(this.props.map.filters),
+      style: 'mapbox://styles/rodowi/cisytnpuf005l2xodmjlz2zlp',
       hash: false
     })
 
